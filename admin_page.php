@@ -44,7 +44,7 @@ else{
 
         <div class="main_bloc">
             <div class="center my-form"> 
-                <form action="/mon_site/test.php" method="POST">
+                <form action="/quick-repair/test.php" method="POST">
 
                     
                     <div class="form-group">
