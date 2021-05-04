@@ -6,9 +6,10 @@ if($_SESSION['loggedIn']){
 }
 else{
       //redirect to the login page
-      header('Location: login_page.html'); 
+      header('Location: login_page.php'); 
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -34,7 +35,7 @@ else{
     <body>
         <div class="container-fluid container_red " >
             
-            <img src="img/logo_rond.png"  class="brand_logo center_logo" >
+        <img src="img/logo_rond.png"  class="brand_logo center_logo" >
         </div>
         <div class="col-md-12 col-xs-12 col-lg-12" style="background-color:rgb(14, 17, 17);">
 
@@ -44,7 +45,7 @@ else{
 
         <div class="main_bloc">
             <div class="center my-form"> 
-                <form action="/quick-repair/test.php" method="POST">
+                <form action="/quick-repair/post_db.php" method="POST">
 
                     
                     <div class="form-group">

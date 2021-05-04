@@ -19,13 +19,15 @@
             $pdo = new PDO($dsn, $user, $password);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);        
             $sql = "INSERT INTO repair_list (client_name, model, trouble) VALUES (?,?,?)";
+           
             $stmt= $pdo->prepare($sql);
             $stmt->execute([$ID, $model, $trouble]);
             
-            echo "Données envoyées"."<br/>";
-            echo "salut";
+            echo "Requete executee"."<br/>";
+            echo "tu choques a mucho t'es sur la bonne voie";
             
-        } catch (PDOException $e) {
+        } 
+        catch (PDOException $e) {
 
             echo 'Échec lors de la connexion : ' . $e->getMessage();
 

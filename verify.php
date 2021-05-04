@@ -15,16 +15,28 @@ if( isset($_POST['username']) and isset($_POST['password']) ) {
 	$user=$_POST['username'];
 	$pass=$_POST['password'];
 
-	$ret=mysqli_query( $conn, "SELECT * FROM utilisateurs WHERE username='$user' AND password='$pass' ") or die("Could not execute query: " .mysqli_error($conn));
+	$ret=mysqli_query( $conn, "SELECT * FROM utilisateurs WHERE username='$user' AND password='$pass'") or die("Could not execute query: " .mysqli_error($conn));
 	$row = mysqli_fetch_assoc($ret);
-	if(!$row) {
-		header("Location: login_page.html");
-		}
-	else {
-	        session_start();
-	        $_SESSION['user'] = $user;
+	
+	if($row["role"] == "admin") {
+		session_start();
+		$_SESSION['user'] = $user;
 		$_SESSION['loggedIn'] = true;
-		header('Location: admin_page.php');
-		}
+		$_SESSION['role'] = "admin";
+		header("Location: admin_page.php");	
+	}
+
+	elseif($row["role"] == "repairer"){
+		$_SESSION['user'] = $user;
+		$_SESSION['loggedIn'] = true;
+		$_SESSION['role'] = "repairer";
+		header("Location: reparation.php");
+	}
+	
+	
+	else {
+		header("Location: login_page.php");
+
+	}
 }
 ?>
