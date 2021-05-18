@@ -1,7 +1,7 @@
 <?php 
 
-        $ID =  htmlspecialchars($_POST['input_ID']);
         $bar_code = htmlspecialchars($_POST['input_code_bar']);
+        $client =  htmlspecialchars($_POST['input_client']);
         $model = htmlspecialchars($_POST['input_modele']) ;
         $trouble = htmlspecialchars($_POST['input_reparation']) ;
         $description = htmlspecialchars($_POST['input_description']) ; 
@@ -9,7 +9,7 @@
         $remarks = htmlspecialchars($_POST['input_remarque']) ;
         $price = htmlspecialchars($_POST['input_prix']) ;
         $deposit = htmlspecialchars($_POST['input_acompte']) ;
-        $marque = htmlspecialchars($_POST['marks']) ;
+        //$m = htmlspecialchars($_POST['marks']) ;
 
         $dsn = 'mysql:dbname=fix_and_go;host=localhost';
         $user = 'root';
@@ -19,10 +19,10 @@
 
             $pdo = new PDO($dsn, $user, $password);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);        
-            $sql = "INSERT INTO repair_list (client_name, model, trouble) VALUES (?,?,?)";
+            $sql = "INSERT INTO repair_list (barcode, client_name, model, trouble, description, password,remarks,total_price,deposit) VALUES (?,?,?,?,?,?,?,?,?)";
            
             $stmt= $pdo->prepare($sql);
-            $stmt->execute([$ID, $model, $trouble, ]);
+            $stmt->execute([$bar_code,$client, $model, $trouble, $description, $pass,$remarks,$price,$deposit,]);
             
             echo "Requete executee"."<br/>";
             echo "tu choques a mucho t'es sur la bonne voie";

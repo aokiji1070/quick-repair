@@ -3,10 +3,12 @@
 session_start();
 if($_SESSION['loggedIn']){
       //allow
+
 }
 else{
       //redirect to the login page
       header('Location: login_page.php'); 
+      
 }
 ?> 
 <!DOCTYPE html>
@@ -33,6 +35,10 @@ else{
 
     <body>
         <div class="container-fluid container_red " >
+
+        <a href="logout.php" >Logout</a>
+
+        
             
         <img src="img/logo_rond.png"  class="brand_logo center_logo" >
         </div>
@@ -48,12 +54,12 @@ else{
                     <table class="fl-table">
                         <thead>
                         <tr>
-                            <th>Header 1</th>
-                            <th>Header 2</th>
-                            <th>Header 3</th>
-                            <th>Header 4</th>
-                            <th>Header 5</th>
-                            <th>Header 6</th>
+                            <th>Client_name</th>
+                            <th>modèle</th>
+                            <th>description</th>
+                            <th>password</th>
+                            <th>remarque</th>
+                            <th>trouble</th>
                         </tr>
                         </thead>
                         <tbody>
