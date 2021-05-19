@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : Dim 25 avr. 2021 à 19:48
+-- Généré le : mer. 19 mai 2021 à 03:42
 -- Version du serveur :  8.0.21
 -- Version de PHP : 7.3.21
 
@@ -39,7 +39,9 @@ CREATE TABLE IF NOT EXISTS `repair_list` (
   `remarks` text NOT NULL,
   `total_price` decimal(10,0) NOT NULL,
   `deposit` decimal(10,0) NOT NULL,
+  `reparateur` varchar(255) NOT NULL,
   `barcode` int DEFAULT NULL,
+  `status` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -54,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `role` int NOT NULL DEFAULT '0',
+  `role` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'repairer',
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 COMMIT;
