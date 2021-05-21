@@ -20,7 +20,7 @@ try {
 
     $pdo = new PDO($dsn, $user, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  
-    $sql = "SELECT username, ID FROM utilisateurs WHERE role='repairer'";
+    $sql = "SELECT username FROM utilisateurs WHERE role='repairer'";
 
     $stmt= $pdo->prepare($sql);
     $stmt->execute();
@@ -68,9 +68,9 @@ echo "Échec lors de l'execution de la requete : " . $e->getMessage();
         <div class="col-md-12 col-xs-12 col-lg-12" style="background-color:white;">
         <a href="/logout.php" >Logout</a> |
         <a href="index.php" >Réparations en cours</a> |
-        <a href="new-repair.php" >Nouvelle réparation</a> |
-        <a href="#" >Gérer les réparateurs</a>
-        
+        <a href="#" >Nouvelle réparation</a> |
+        <a href="manage-repairers" >Gérer les réparateurs</a> 
+
         </div> 
 
         </div>
@@ -78,34 +78,7 @@ echo "Échec lors de l'execution de la requete : " . $e->getMessage();
         <div class="main_bloc">
             
             <div class="center my-form"> 
-                <form method='POST' action='add_repairer.php'>
-                    
-                    <div class="form-group">
-                        <div>
-                            <ul>
-                                    
-                                <?php
-                                    foreach ($arr as $array){
-                                            echo "<li>".$array['username']." <a href='delete-user.php?id=".$array['ID']."'>[Supprimer]</a></br></li>";   
-                                    }
-                                    
-                                ?>
-                            </ul>
-                        </div>
-                        
-                        <input class="form-control " name="username" id="" type="text">
-                        <label for="input_modele">Nom du réparateur</label>
-                        
-                    </div> 
-
-                    <div class="form-group">
-                        <input class="form-control" name="password" id="" type="password">
-                        <label for="input_password">Mot de passe</label>
-                    </div> 
-
-                    <input type="submit" value="envoyer"> 
-
-                </form>
+            <?php include 'form.php';?>
             </div>
         </div>
     </body>
