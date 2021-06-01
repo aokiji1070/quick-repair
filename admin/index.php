@@ -22,7 +22,7 @@ else{
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <title>Page Login</title>
+        <title>Interface Admin </title>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -56,16 +56,24 @@ else{
             <div class="center "> 
                 <div class="table-wrapper">
                     <?php include 'read_data.php';?>
-                    <table class="fl-table">
+                    <table class="fl-table" style="float: right" > <!--  ici je met a droite le tableau -->
                         <thead>
                         <tr>
                             <th>Client_name</th>
                             <th>modèle</th>
+                            <th>trouble</th>
                             <th>description</th>
                             <th>password</th>
                             <th>remarque</th>
-                            <th>trouble</th>
+                            <th>Prix</th>
+                            <th>accompte</th>
+                            <th>réparateurs</th>
+                            <th>code bar </th>
+                            <th>arrivée</th>
                             <th>Status</th>
+                            
+                            
+                            
                         </tr>
                         </thead>
                         <tbody>
@@ -76,9 +84,16 @@ else{
                                 echo "<td>".$array['client_name']."</td>";
                                 echo "<td>".$array['model']."</td>";
                                 echo "<td>".$array['trouble']."</td>";
+                                echo "<td>".$array['description']."</td>";
                                 echo "<td>".$array['password']."</td>";
                                 echo "<td>".$array['remarks']."</td>";
-                                echo "<td>".$array['remarks']."</td>";
+                                echo "<td>".$array['total_price']."</td>";
+                                echo "<td>".$array['deposit']."</td>";
+                                echo "<td>".$array['reparateur']."</td>";
+                                echo "<td>".$array['barcode']."</td>";
+                                echo "<td>".$array['arriving']."</td>";
+                                
+                                
                                 
                                 /*
                                 if ($array['status'] == 0){

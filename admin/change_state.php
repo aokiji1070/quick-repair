@@ -1,5 +1,3 @@
-
-
 <?php
 
 $dsn = 'mysql:dbname=fix_and_go;host=localhost';

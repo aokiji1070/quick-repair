@@ -25,9 +25,7 @@
             $stmt= $pdo->prepare($sql);
             $stmt->execute([$bar_code,$client, $model, $trouble, $description, $pass,$remarks,$price,$deposit,$repairer_name]);
             
-            echo "Requete executee"."<br/>";
-            echo "tu choques a mucho t'es sur la bonne voie";
-            
+            header('Location: index.php');
         } 
         catch (PDOException $e) {
 

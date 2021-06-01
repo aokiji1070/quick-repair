@@ -93,17 +93,18 @@ echo "Échec lors de l'execution de la requete : " . $e->getMessage();
                             </ul>
                         </div>
                         
-                        <input class="form-control " name="username" id="" type="text">
-                        <label for="input_modele">Nom du réparateur</label>
+                            <input class="form-control " name="username" id="" type="text">
+                            <label for="input_modele">Nom du réparateur</label>
                         
-                    </div> 
+                        </div> 
 
-                    <div class="form-group">
-                        <input class="form-control" name="password" id="" type="password">
-                        <label for="input_password">Mot de passe</label>
-                    </div> 
+                        <div class="form-group">
+                            <input class="form-control" name="password" id="" type="password">
+                            <label for="input_password">Mot de passe</label>
+                        </div>
+                         
 
-                    <input type="submit" value="envoyer"> 
+                    <input type="submit" value="ajouter"> 
 
                 </form>
             </div>
